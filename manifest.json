@@ -1,0 +1,21 @@
+{
+  "name": "Face detection",
+  "version": "2.0.0",
+  "manifest_version":2,
+  "description": "Face detection using jsfeat",
+  "icons": {
+    "48" : "sample-48.png",
+    "128" : "sample-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js" : ["contentscript.js"]
+    }
+  ],
+  "permissions":  ["http://*/*","https://*/*"],
+  "background": {
+    "persistent": false,
+    "scripts": ["jsfeat.js","frontalface.js","jsfeat_detect.js","background.js"]
+  }
+}
